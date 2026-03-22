@@ -1,0 +1,29 @@
+---
+title: Synology Chat
+description: Local NAS chat connection for Synology.
+---
+
+# Synology Chat Extension
+
+Turn your Synology NAS into your own private AI hub by connecting SuperClaw to Synology Chat. 
+
+## Setup Guide
+
+SuperClaw requires webhooks configured in your Synology Chat interface.
+
+### 1. Generate Webhooks in Synology Chat
+1. Open **Synology Chat** on your NAS.
+2. Click on your **User Profile** (top right) -> **Integration**.
+3. **Incoming Webhook**: Click `Incoming Webhooks` -> `Create`. 
+   - Assign it to a channel or user.
+   - Copy the generated **Webhook URL**. It will look like `http://NAS-IP:5000/webapi/entry.cgi?api=SYNO.Chat.External...`
+4. **Outgoing Webhook**: Click `Outgoing Webhooks` -> `Create`.
+   - Set the Trigger words or assign it to all messages in a specific channel.
+   - Point its URL to your SuperClaw incoming webhook route (e.g., `http://YOUR-SUPERCLAW-IP:3000/api/webhook/synology-chat`).
+   - Copy the generated **Secret Token**.
+
+### 2. Connect to SuperClaw
+1. In the SuperClaw dashboard, click **Connect** for Synology Chat.
+2. Paste the **Incoming Webhook URL**.
+3. Paste the **Outgoing Token** (Secret Token).
+4. Click Connect! Your AI is now actively listening and responding inside your NAS chat instances.

@@ -1,0 +1,36 @@
+---
+title: Nostr
+description: Connect to the Nostr decentralized network for encrypted DMs.
+---
+
+# Nostr Extension
+
+Connect your AI agent to Nostr. The agent will sign in as an active Nostr profile, enabling it to receive and respond to decentralized, end-to-end encrypted direct messages (NIP-04/NIP-44) from users across the Nostr protocol.
+
+## Setup Guide
+
+To setup this extension, you need a Nostr private key (`nsec`). This acts as both the "username" and "password" for your bot.
+
+### How to get an nsec key for your bot
+
+Because there are no "corporations" on Nostr, creating a bot account is just like creating a normal human account: you generate a cryptographic keypair.
+
+1. **Use a Client or Generator**
+   - Head to a web client like `snort.social`, `primal.net`, or use a tool like `nostrtool.com`.
+   - Select **Generate New Key** or **Create Account**.
+
+2. **Copy the Private Key**
+   - Your private key will begin with `nsec1...`.
+   - **Important**: Treat this key like a password. If anyone gets it, they control the bot's identity completely. Keep it safe.
+
+3. **Choose Relays**
+   - You will need to specify which Relays the bot should connect to (this is how Nostr routes messages). Usually, default relays like `wss://relay.damus.io`, `wss://nos.lol`, or `wss://relay.primal.net` are highly popular.
+
+### Connecting in SuperClaw
+
+1. In the SuperClaw dashboard, click **Connect** on the Nostr card.
+2. Paste the `nsec1...` **Private Key**.
+3. Enter your preferred relays as a comma-separated list.
+4. Click **Connect**. The bot is online!
+
+*(Note: Never put your personal human nsec into the bot, unless you want the bot to reply to all of your personal DMs. Always generate a dedicated keypair for the bot!)*

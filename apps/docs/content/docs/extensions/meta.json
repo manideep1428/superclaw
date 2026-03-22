@@ -1,0 +1,33 @@
+{
+  "title": "Extensions",
+  "pages": [
+    "index",
+    "discord",
+    "slack",
+    "telegram",
+    "elevenlabs",
+    "lancedb",
+    "whatsapp",
+    "msteams",
+    "matrix",
+    "twitch",
+    "bluebubbles",
+    "feishu",
+    "line",
+    "googlechat",
+    "mattermost",
+    "nostr",
+    "voice-call",
+    "zalo",
+    "irc",
+    "imessage",
+    "nextcloud-talk",
+    "signal",
+    "synology-chat",
+    "tlon",
+    "zalouser",
+    "memory-core",
+    "llm-task",
+    "diffs"
+  ]
+}

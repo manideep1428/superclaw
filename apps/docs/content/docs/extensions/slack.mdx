@@ -1,0 +1,31 @@
+---
+title: Slack
+description: How to configure Slack OAuth credentials
+---
+
+## Connecting Slack to SuperClaw
+
+To securely connect your Slack workspace without manually juggling tokens, SuperClaw supports Slack OAuth.
+
+### 1. Create a Slack App
+1. Go to [api.slack.com/apps](https://api.slack.com/apps).
+2. Click **Create New App** and choose **From scratch**.
+3. Name your app (e.g., "SuperClaw") and select the workspace you wish to test in.
+
+### 2. Get the Client ID and Secret
+Because Slack uses OAuth, SuperClaw acts as an "Add to Slack" button. You won't have to copy tokens into the SuperClaw UI. Instead, SuperClaw itself needs the global App IDs.
+
+1. In your Slack app settings, go to **Basic Information**.
+2. Scroll down to **App Credentials**.
+3. Here you will find the **Client ID** and **Client Secret**.
+*(Note: As the SuperClaw administrator, you configure these globally in your server environment variables, enabling the one-click Connect button for your users.)*
+
+### 3. Manual Token (For Self-Hosted / Internal Apps)
+If SuperClaw is running in "Manual Fallback" mode, you'll need the tokens:
+1. Go to **OAuth & Permissions** in the sidebar.
+2. Under **Scopes**, add `chat:write`, `app_mentions:read`, and `channels:history` to the Bot Token Scopes.
+3. Scroll back up and click **Install to Workspace**.
+4. Once installed, copy the **Bot User OAuth Token** (`xoxb-...`).
+5. Go back to **Basic Information** and copy the **Signing Secret**.
+
+Paste the **Bot Token** and **Signing Secret** into SuperClaw!

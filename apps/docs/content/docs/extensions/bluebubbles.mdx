@@ -1,0 +1,19 @@
+---
+title: BlueBubbles
+description: Connect your AI to Apple iMessage via BlueBubbles
+---
+
+# BlueBubbles (iMessage)
+
+BlueBubbles is an ecosystem of apps that brings iMessage to Android, Windows, Linux, and the Web. It also has a robust Web API that SuperClaw can connect to for sending/receiving texts and media on macOS.
+
+## Prerequisites
+
+You must already have [BlueBubbles Server](https://bluebubbles.app/) running on a Mac to proxy the messages.
+
+## Configuration
+
+1. **Server URL**: In your BlueBubbles Desktop app, go to your **Settings** -> **Connection** and grab the Public URL (usually an `ngrok` or Cloudflare proxy link) e.g. `https://your-bluebubbles.app`.
+2. **API Password**: In the BlueBubbles Desktop app, go to **API & Webhooks** and find the password. This is required for SuperClaw to securely connect to your server.
+
+Once connected to your server, SuperClaw will automatically fetch your chats and be able to reply inline to iMessages!

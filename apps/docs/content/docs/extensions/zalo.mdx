@@ -1,0 +1,32 @@
+---
+title: Zalo
+description: Connect to the Zalo messaging app in Vietnam.
+---
+
+# Zalo Extension (Official Account)
+
+This extension connects SuperClaw to **Zalo**, the most popular messaging platform in Vietnam. It specifically connects to a Zalo Official Account (OA) to provide automated customer support.
+
+## Setup Guide
+
+To authenticate the connection, SuperClaw requires your **Zalo OA ID** and a developer **Access Token**.
+
+### 1. Get your Zalo OA ID
+1. Log in to your [Zalo Official Account Manager](https://oa.zalo.me/manage/profile).
+2. Go to the **Account Information** page or click on your profile picture.
+3. Your **OA ID** is a long numbers string displayed at the top. Copy this ID.
+
+### 2. Generate an Access Token
+Tokens are generated via the Zalo for Developers platform.
+1. Navigate to [Zalo for Developers](https://developers.zalo.me/).
+2. Create a new "Application" or select an existing one. 
+3. **Important:** Link this Application to your Official Account ID in the settings.
+4. Once linked, you can use the **API Explorer** provided by Zalo, or navigate through your app's OAuth permission flows to generate an **Access Token** (giving the `oa.message` permission).
+
+*(Note: A standard Zalo OA Access token typically needs to be refreshed. If you are using the advanced auth flow, make sure you configure your callback URLs so SuperClaw can refresh it).*
+
+### 3. Connect to SuperClaw
+1. In the SuperClaw dashboard, click **Connect** under Zalo.
+2. Enter the **OA ID**.
+3. Paste the **Access Token**.
+4. Click Connect! Messages sent to your Official Account will now route to your AI.

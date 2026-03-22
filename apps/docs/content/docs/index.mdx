@@ -1,0 +1,55 @@
+---
+title: Welcome to SuperClaw
+description: The ultimate, modular UI for deploying autonomous AI agents.
+---
+
+# Welcome to SuperClaw 🚀
+
+SuperClaw is the next evolution of [OpenClaw](https://github.com/a16z-infra/openclaw), transforming a powerful, headless, terminal-based agent framework into a **fully-fledged, UI-driven Web Application**.
+
+With SuperClaw, you no longer need to edit JSON configuration files or manually start workers in your terminal. We provide a beautiful, modern dashboard where you can click to connect your LLMs, Databases, Voice engines, and Chat Channels as seamless "Extensions".
+
+---
+
+## 🌟 Why SuperClaw?
+
+In OpenClaw, changing your agent from Anthropic to OpenAI, or moving from a Telegram bot to Discord, required rewriting configuration code and managing API keys in `.env` files. 
+
+**SuperClaw changes everything:**
+- **Visual Extension Marketplace**: Connect to new channels with a single click.
+- **QR Login Flows**: Easily link a personal WhatsApp without the headache of the Meta Business Cloud API.
+- **Real-Time Dashboards**: Visualize your connected LLM models (e.g., GPT-4, Claude), Memory Stores (e.g., LanceDB), and Voice engines (e.g., ElevenLabs).
+- **Secure by Default**: Your API keys are encrypted at rest using industry-standard KMS approaches and never exposed to the frontend.
+
+## 🧩 The Extension Ecosystem
+
+SuperClaw is built entirely around "Extensions". If you want your agent to do something, there is an extension for it!
+
+### 💬 Channels (Where your agent lives)
+Connect your AI to the real world. Available extensions include:
+- **WhatsApp**: Scan a QR code to link your account.
+- **Telegram / Discord / Slack**: Industry standard community bridges.
+- **Microsoft Teams & Google Chat**: For enterprise workflows.
+- **Matrix / Nextcloud / Signal**: For end-to-end encrypted messaging.
+
+### 🧠 Providers (Your agent's brain)
+Give your agent logic and reasoning:
+- **OpenAI / Anthropic / Gemini**: Cloud-based intelligence.
+- **Ollama / LocalAI / LMStudio**: Local, privacy-first intelligence.
+- **Fireworks / Together / Groq**: Blazing fast API intelligence.
+
+### 💾 Memory (Your agent's history)
+Allow your agent to recall past conversations and user preferences:
+- **Core File Memory**: Simple, reliable JSON-based storage.
+- **LanceDB Vector Memory**: Semantic memory search out of the box.
+
+---
+
+## 🚀 Getting Started
+
+To configure your agent, dive into the Documentation using the cards below!
+
+<Cards>
+  <Card title="Extensions Setup Guide" description="Learn how to get the API keys and webhooks required for our 30+ extensions." href="/docs/extensions" />
+  <Card title="Return to Dashboard" description="Go back to the SuperClaw UI to connect your extensions." href="http://localhost:3000/dashboard" />
+</Cards>

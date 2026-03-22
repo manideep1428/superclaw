@@ -1,0 +1,43 @@
+---
+title: Microsoft Teams
+description: Connect to Microsoft Teams via an Azure Bot Setup
+---
+
+# Microsoft Teams
+
+The MS Teams extension connects your AI to your corporate Microsoft Teams chat channels and DMs via the Microsoft Bot Framework. 
+
+## Requirements
+
+1. **Microsoft App ID**
+2. **Microsoft App Password** (Client Secret)
+
+---
+
+## How to get your credentials
+
+You need to create an Azure Bot resource to obtain an App ID and App Password.
+
+### Step 1: Create an App Registration
+1. Go to the [Azure Portal](https://portal.azure.com/).
+2. Search for **Azure Active Directory** (or Microsoft Entra ID).
+3. In the left panel, click **App registrations** -> **New registration**.
+4. Name your bot and select the supported account type (usually multi-tenant for Teams apps).
+5. Click **Register**.
+6. On the Overview page, copy the **Application (client) ID**. This is your `Microsoft App ID` in SuperClaw.
+
+### Step 2: Create a Client Secret
+1. On your App Registration page, click **Certificates & secrets** on the left.
+2. Under "Client secrets", click **New client secret**.
+3. Name it and choose an expiration date.
+4. Click **Add**.
+5. **Immediately copy the Secret Value**. This will be your `Microsoft App Password` in SuperClaw. It will never be shown again!
+
+### Step 3: Link to Azure Bot Service
+1. In the Azure Portal search bar, type **Azure Bot** and create a new resource.
+2. Link it to the App Registration by pasting the `Microsoft App ID` you generated above.
+3. In your new Azure Bot resource, go to **Channels** on the left.
+4. Click on the **Microsoft Teams** logo and follow the steps to enable it.
+5. In **Configuration**, you will need to paste your SuperClaw Webhook URL (which usually looks like `https://your-superclaw-domain/api/webhooks/msteams`).
+
+Paste the ID and Password into the SuperClaw connection modal and click connect!

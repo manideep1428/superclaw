@@ -1,0 +1,28 @@
+---
+title: Zalo User
+description: Connect your AI to a personal Zalo account.
+---
+
+# Zalo User Extension
+
+Connect SuperClaw to your personal Zalo account (instead of an Official Account). This operates via the browser-based Zalo Web interface, acting as a headless client to reply to individual personal chats and group mentions.
+
+*Disclaimer: Automating personal accounts violates Zalo Terms of Service and could result in bans. Use an experimental auxiliary phone number if testing this.*
+
+## Setup Guide
+
+SuperClaw requires extracting your active Zalo Web browser cookie to hijack the session.
+
+### 1. Extract your Zalo Web Cookie
+1. Log in to your personal Zalo account via [chat.zalo.me](https://chat.zalo.me/) passing QR or password validation.
+2. Once logged in, right-click anywhere on the page and click **Inspect** to open Developer Tools.
+3. Select the **Network** tab.
+4. Refresh the page (F5 or CMD+R).
+5. Click on any large request to `chat.zalo.me/api/...`.
+6. Scroll down to the **Request Headers** section and look for `cookie:`.
+7. **Copy the entire extremely long string** following `cookie: `.
+
+### 2. Connect to SuperClaw
+1. In the SuperClaw dashboard, click **Connect** for the Zalo User extension.
+2. Paste the **Zalo Web Cookie**.
+3. Click Connect! The bot will now operate as your personal account from the IP SuperClaw is hosted on.

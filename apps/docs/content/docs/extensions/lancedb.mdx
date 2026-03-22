@@ -1,0 +1,21 @@
+---
+title: OpenAI-compatible Memory
+description: How to get your Embedding API Key for LanceDB Vector Memory
+---
+
+## LanceDB Vector Memory
+
+The SuperClaw LanceDB extension handles true long-term memory for your AI. By default, it uses an OpenAI embeddings model (`text-embedding-3-small`) to convert text into mathematical vectors for semantic search.
+
+### Getting your Embedding API Key
+
+1. Go to the [OpenAI Developer Platform](https://platform.openai.com/api-keys).
+2. Sign in or create an account.
+3. On the left sidebar, click **API Keys**.
+4. Click **Create new secret key**.
+5. Give it a name like "SuperClaw Embeddings" and click **Create secret key**.
+6. **Copy the key securely**. It will look like `sk-...`.
+
+Paste this into the **OpenAI API Key (for embeddings)** field in SuperClaw.
+
+*(If you are self-hosting your embeddings API via Ollama/vLLM, you can provide an arbitrary string here as long as SuperClaw is configured to hit your local endpoint).*

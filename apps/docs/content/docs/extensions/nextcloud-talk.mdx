@@ -1,0 +1,30 @@
+---
+title: Nextcloud Talk
+description: Secure, self-hosted private messaging.
+---
+
+# Nextcloud Talk Extension
+
+Connect your SuperClaw AI to your self-hosted Nextcloud instance to chat privately over Nextcloud Talk.
+
+## Setup Guide
+
+In Nextcloud Talk, bots utilize standard Nextcloud user accounts.
+
+### 1. Create a Bot Account
+1. Log in to your Nextcloud instance as an **Administrator**.
+2. Go to **Users** and create a new user (e.g., username: `superclaw-bot`). 
+3. Log out, and then log back in *as the new bot user*.
+
+### 2. Generate an App Password
+1. While logged in as the bot, go to **Settings** -> **Security**.
+2. Scroll down to **Devices & sessions**.
+3. Create a new App password (name it "SuperClaw Bot").
+4. **Copy the generated App Password**. (Do not use the bot's raw login password for security).
+
+### 3. Connect to SuperClaw
+1. Open the SuperClaw dashboard and click **Connect** on Nextcloud Talk.
+2. Enter your **Nextcloud URL** (e.g., `https://cloud.mydomain.com`).
+3. Enter the bot's Nextcloud **Username**.
+4. Paste the **App Password**.
+5. Click Connect! The bot will now listen in Nextcloud Talk channels it is invited to.
