@@ -1,0 +1,228 @@
+﻿---
+title: LLM Providers
+description: Cloud provider setup guide for the Superclae LLM Providers dashboard.
+---
+
+# LLM Provider Setup
+
+This page backs the **LLM Providers** screen in Superclae.
+
+Use it when you want to connect a hosted provider such as OpenAI, Anthropic, Google, OpenRouter, or Bedrock through the dashboard at `/dashboard/llm-setup`.
+
+## Before you start
+
+1. Open **Dashboard -> LLM Providers** in Superclae.
+2. Pick the provider you want.
+3. Click **Docs** on the card.
+4. Create the upstream credential in that provider's console.
+5. Paste the key, region, base URL override, or default model into Superclae.
+
+Current limitation: these provider forms are still frontend-only. Saving a provider stores it in the browser right now and does not yet push live config to the gateway.
+
+## Not included on this page
+
+These OpenClaw entries were intentionally excluded from the cloud-provider dashboard:
+
+- Ollama
+- SGLang
+- vLLM
+- Claude Max API Proxy
+- Deepgram
+
+## Quick reference
+
+| Provider | Usually needed in Superclae |
+| --- | --- |
+| Anthropic / OpenAI / Groq / Mistral / xAI / Together / OpenRouter | API key + optional default model |
+| Amazon Bedrock / Qianfan | Cloud credentials + region or key pair |
+| Cloudflare AI Gateway / Vercel AI Gateway / LiteLLM | Gateway key + gateway/base URL details |
+| Qwen | OAuth-style account setup, plus optional local label |
+
+## Provider guides
+
+<h2 id="anthropic">Anthropic</h2>
+
+Use this when you want direct Claude access inside Superclae.
+
+1. Open the Anthropic Console and create an API key.
+2. In Superclae, open **Anthropic** in **LLM Providers**.
+3. Paste the key into **API key**.
+4. Optionally set **Default model** to something like `anthropic/claude-sonnet-4-6`.
+
+Notes:
+
+- If you are using a Claude Code or setup-token flow instead of a raw API key, complete that auth flow on the gateway host first.
+- The local Superclae form can still store a label and preferred model while backend wiring is pending.
+
+<h2 id="openai">OpenAI</h2>
+
+1. Open the OpenAI Platform and create a project API key.
+2. In Superclae, open **OpenAI**.
+3. Paste the key into **API key**.
+4. Optionally set **Default model** to something like `openai/gpt-5.4`.
+
+<h2 id="google">Google (Gemini)</h2>
+
+1. Create a Gemini or Google AI API key in the Google console or AI Studio flow you use.
+2. In Superclae, open **Google (Gemini)**.
+3. Paste the key into **API key**.
+4. Optionally set **Default model** to a Gemini model ref such as `google/gemini-2.5-pro`.
+
+<h2 id="openrouter">OpenRouter</h2>
+
+1. Generate an OpenRouter API key.
+2. In Superclae, open **OpenRouter**.
+3. Paste the key into **API key**.
+4. Set **Default model** using a provider-prefixed ref if you want strict routing, for example `openrouter/anthropic/claude-sonnet-4-6`.
+
+<h2 id="bedrock">Amazon Bedrock</h2>
+
+1. Make sure your AWS account has Bedrock access enabled in the region you want.
+2. Create or use an IAM principal with Bedrock permissions.
+3. In Superclae, enter **Access key ID**, **Secret access key**, and **Region**.
+4. Optionally set a Bedrock model id as the default model.
+
+<h2 id="cloudflare-ai-gateway">Cloudflare AI Gateway</h2>
+
+1. Create an AI Gateway in Cloudflare.
+2. Copy the **Account ID**, **Gateway ID**, and the credential you use for gateway access.
+3. In Superclae, paste those values into the Cloudflare AI Gateway form.
+4. Optionally set a provider-prefixed default model ref.
+
+<h2 id="glm">GLM Models</h2>
+
+1. Create a GLM / BigModel API key.
+2. Paste it into **API key** in Superclae.
+3. Only use **Base URL override** if your account or region requires a custom endpoint.
+4. Optionally set a default GLM model ref.
+
+<h2 id="groq">Groq</h2>
+
+1. Create a Groq API key.
+2. Paste it into **API key**.
+3. Optionally set a Groq model as the default.
+
+<h2 id="huggingface">Hugging Face</h2>
+
+1. Create a Hugging Face access token with the inference permissions you need.
+2. Paste it into **Access token** in Superclae.
+3. Optionally set a hosted inference model as the default.
+
+<h2 id="kilocode">Kilocode</h2>
+
+1. Get the API key and endpoint details from your Kilocode account or deployment.
+2. Paste the **API key** into Superclae.
+3. Use **Base URL override** only when your Kilocode endpoint is not on the default hostname.
+4. Optionally set a provider-prefixed default model.
+
+<h2 id="litellm">LiteLLM</h2>
+
+1. Generate a LiteLLM virtual key.
+2. Paste it into **Virtual key**.
+3. Set **Base URL override** to your LiteLLM `/v1` endpoint.
+4. Optionally set the model name you want LiteLLM to route.
+
+<h2 id="minimax">MiniMax</h2>
+
+1. Create a MiniMax API key.
+2. Pick the correct region in Superclae: **Global** or **China**.
+3. Paste the key into **API key**.
+4. Optionally set a default MiniMax model ref.
+
+<h2 id="mistral">Mistral</h2>
+
+1. Create a Mistral API key.
+2. Paste it into **API key** in Superclae.
+3. Optionally set a default Mistral model ref.
+
+<h2 id="modelstudio">Model Studio</h2>
+
+1. Create a Model Studio / DashScope API key.
+2. Paste it into **API key**.
+3. Only fill **Base URL override** if you need a non-default endpoint.
+4. Optionally set a default model ref.
+
+<h2 id="moonshot">Moonshot AI</h2>
+
+1. Create a Moonshot API key.
+2. Paste it into **API key**.
+3. Use **Base URL override** only if you are targeting a different Moonshot endpoint than the default.
+4. Optionally set a Kimi or Moonshot model ref.
+
+<h2 id="nvidia">NVIDIA</h2>
+
+1. Create the hosted inference key you use for NVIDIA model access.
+2. Paste it into **API key** in Superclae.
+3. Optionally set a default NVIDIA model ref.
+
+<h2 id="opencode">OpenCode</h2>
+
+1. Create or copy the OpenCode key used by your runtime.
+2. Paste it into **API key**.
+3. Optionally set the catalog model you want as default.
+
+<h2 id="perplexity-provider">Perplexity</h2>
+
+1. Create a Perplexity API key.
+2. Paste it into **API key**.
+3. Optionally set a grounded-search model such as `perplexity/sonar-pro`.
+
+<h2 id="qianfan">Qianfan</h2>
+
+1. Create the Qianfan **Access key** and **Secret key** pair.
+2. Paste both into the Qianfan form in Superclae.
+3. Optionally set a default ERNIE/Qianfan model ref.
+
+<h2 id="qwen">Qwen</h2>
+
+1. Use the Qwen OAuth flow supported by OpenClaw on the gateway side.
+2. In Superclae, save a local **Account label** so you can identify the login you plan to use.
+3. Optionally set a default Qwen model ref.
+
+<h2 id="together">Together AI</h2>
+
+1. Create a Together API key.
+2. Paste it into **API key**.
+3. Optionally set a Together model ref.
+
+<h2 id="vercel-ai-gateway">Vercel AI Gateway</h2>
+
+1. Create the Vercel AI Gateway token or key used by your project.
+2. Paste it into **API key** in Superclae.
+3. Optionally set a provider-prefixed default model ref.
+
+<h2 id="venice">Venice</h2>
+
+1. Create a Venice API key.
+2. Paste it into **API key**.
+3. Optionally set a Venice model ref as the default.
+
+<h2 id="volcengine">Volcengine</h2>
+
+1. Create the Volcengine / Doubao credential used for model access.
+2. Paste it into **API key**.
+3. Optionally set a default Volcengine model ref.
+
+<h2 id="xai">xAI</h2>
+
+1. Create an xAI API key.
+2. Paste it into **API key**.
+3. Optionally set a Grok model ref such as `xai/grok-4`.
+
+<h2 id="xiaomi">Xiaomi</h2>
+
+1. Create the Xiaomi API key or token used for the endpoint you have access to.
+2. Paste it into **API key**.
+3. Use **Base URL override** if Xiaomi gave you a custom OpenAI-compatible endpoint.
+4. Optionally set a default Xiaomi model ref.
+
+<h2 id="zai">Z.AI</h2>
+
+1. Create a Z.AI API key.
+2. Paste it into **API key** in Superclae.
+3. Optionally set a default Z.AI model ref.
+
+## Next step
+
+After you save a provider locally in Superclae, the next backend milestone is to map that saved config into the real OpenClaw gateway config and auth profile flow.
+

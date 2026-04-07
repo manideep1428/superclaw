@@ -1,15 +1,15 @@
----
+﻿---
 title: Signal
 description: Connect to encrypted Signal messaging using signal-cli.
 ---
 
 # Signal Extension
 
-Connect your SuperClaw AI directly to the secure, end-to-end encrypted Signal network.
+Connect your Superclae AI directly to the secure, end-to-end encrypted Signal network.
 
 ## Setup Guide
 
-Signal officially discourages bots and does not have a formal Bot API. To integrate, SuperClaw communicates with a `signal-cli` REST API background service. 
+Signal officially discourages bots and does not have a formal Bot API. To integrate, Superclae communicates with a `signal-cli` REST API background service. 
 
 ### 1. Run a Signal-CLI REST API Instance
 You must deploy the `bbernhard/signal-cli-rest-api` Docker container.
@@ -23,8 +23,9 @@ docker run -d --name signal-api -p 8080:8080 \
 ### 2. Register a Phone Number
 Once the API is running at `http://localhost:8080`, you must register a phone number (e.g., a burner SIM or VoIP number) through the API documentation interface (usually available via Swagger at `http://localhost:8080/api/qrcodelink` or via `POST /v1/register/{number}`). Run through the registration or QR linking process.
 
-### 3. Connect to SuperClaw
-1. Go to the SuperClaw Dashboard and click **Connect** on the Signal card.
+### 3. Connect to Superclae
+1. Go to the Superclae Dashboard and click **Connect** on the Signal card.
 2. Enter the **Signal-CLI REST URL** (e.g., `http://localhost:8080`).
 3. Enter the **Bot Phone Number** you just registered (in E.164 format, like `+15551234567`).
 4. Click Connect! Your AI is now securely on Signal.
+

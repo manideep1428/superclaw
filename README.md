@@ -1,159 +1,360 @@
-# Turborepo starter
+# SuperClaw - Web-Based OpenClaw Platform
 
-This Turborepo starter is maintained by the Turborepo core team.
+> A simplified, web-based interface for OpenClaw that makes it easy to connect, configure, and manage all extensions through your browser.
 
-## Using this example
+---
 
-Run the following command:
+## 🎯 What is SuperClaw?
 
-```sh
-npx create-turbo@latest
+SuperClaw is a web application that provides a user-friendly interface for OpenClaw. Instead of using command-line tools and editing JSON files, you can:
+
+- ✅ **Sign up through a website** - No CLI required
+- ✅ **Connect via web browser** - Visual dashboard
+- ✅ **Manage all 75+ extensions** - Click to enable/disable
+- ✅ **Configure channels visually** - Forms instead of JSON
+- ✅ **Real-time status** - See what's happening live
+
+---
+
+## 🚀 Quick Start (5 Minutes)
+
+### 1. Start OpenClaw Gateway
+
+```bash
+cd openclaw
+openclaw gateway --port 18789
 ```
 
-## What's inside?
+### 2. Start SuperClaw Web App
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo build
+```bash
+cd superclaw/apps/web
+npm install
+npm run dev
 ```
 
-Without global `turbo`, use your package manager:
+### 3. Open Browser
 
-```sh
-cd my-turborepo
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+```
+http://localhost:3000
 ```
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+### 4. Sign Up & Connect
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+- Create an account
+- Dashboard automatically connects to gateway
+- Start managing extensions!
 
-```sh
-turbo build --filter=docs
+**Full instructions:** See `QUICK_START.md`
+
+---
+
+## 📚 Documentation
+
+| Document | Description |
+|----------|-------------|
+| **QUICK_START.md** | Get up and running in 5 minutes |
+| **CLOUD_OPENCLAW_CONNECTION_GUIDE.md** | Connect SuperClaw to a cloud-deployed OpenClaw gateway |
+| **WEB_BASED_OPENCLAW_GUIDE.md** | Complete implementation guide |
+| **../openclaw/OPENCLAW_ARCHITECTURE_GUIDE.md** | How OpenClaw works |
+| **../openclaw/DEPLOYMENT_GUIDE.md** | Production deployment |
+| **../openclaw/RAM_REQUIREMENTS.md** | Memory requirements |
+
+---
+
+## ✨ Features
+
+### ✅ Currently Working
+
+- **Authentication** - Sign up, sign in, sign out with WorkOS
+- **Gateway Connection** - Real-time WebSocket connection
+- **Dashboard** - Status display and quick actions
+- **Responsive UI** - Works on desktop and mobile
+- **Dark/Light Theme** - Automatic theme switching
+
+### 🚧 Coming Soon
+
+- **Extension Marketplace** - Browse and enable 75+ extensions
+- **Channel Configuration** - Visual forms for Telegram, Discord, etc.
+- **Settings Management** - Configure LLM providers, security, etc.
+- **Deployment Tools** - One-click deployments
+- **Real-time Monitoring** - Live stats and logs
+
+---
+
+## 🏗️ Architecture
+
+```
+┌─────────────────────────────────────────┐
+│         User's Browser                   │
+│    SuperClaw Web Interface               │
+│    (Next.js + React + shadcn/ui)        │
+└──────────────────┬──────────────────────┘
+                   │ WebSocket (ws://)
+                   ▼
+┌─────────────────────────────────────────┐
+│    OpenClaw Gateway (localhost:18789)   │
+│  • 75+ Extensions                       │
+│  • Channel Adapters                     │
+│  • LLM Providers                        │
+│  • Session Management                   │
+└─────────────────────────────────────────┘
 ```
 
-Without global `turbo`:
+---
 
-```sh
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
+## 🛠️ Tech Stack
+
+- **Frontend:** Next.js 16, React 19, TypeScript
+- **UI:** shadcn/ui, Tailwind CSS
+- **Auth:** WorkOS AuthKit
+- **Communication:** WebSocket
+- **Backend:** OpenClaw Gateway
+
+---
+
+## 📦 Project Structure
+
+```
+superclaw/
+├── apps/
+│   └── web/                    # Next.js web application
+│       ├── app/                # App router pages
+│       │   ├── page.tsx        # Landing page
+│       │   ├── dashboard/      # Dashboard
+│       │   └── (auth)/         # Auth routes
+│       ├── components/         # React components
+│       │   ├── gateway-status.tsx
+│       │   └── ui/             # shadcn/ui components
+│       ├── hooks/              # React hooks
+│       │   └── use-gateway.ts  # Gateway connection
+│       ├── lib/                # Utilities
+│       │   ├── gateway-client.ts
+│       │   └── utils.ts
+│       └── .env.local          # Environment variables
+├── QUICK_START.md              # Quick start guide
+├── WEB_BASED_OPENCLAW_GUIDE.md # Full implementation guide
+└── README.md                   # This file
 ```
 
-### Develop
+---
 
-To develop all apps and packages, run the following command:
+## 🎨 Screenshots
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo dev
+### Landing Page
+```
+┌─────────────────────────────────────────┐
+│  SuperClaw                    Sign In   │
+├─────────────────────────────────────────┤
+│                                         │
+│     Welcome to SuperClaw                │
+│     The powerful extension platform     │
+│                                         │
+│     [Get Started]  [Sign In]            │
+│                                         │
+│  🚀 Easy Deployment                     │
+│  🔌 Extension Marketplace               │
+│  ⚙️ Web Management                      │
+└─────────────────────────────────────────┘
 ```
 
-Without global `turbo`, use your package manager:
-
-```sh
-cd my-turborepo
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
+### Dashboard
+```
+┌─────────────────────────────────────────┐
+│  Dashboard                              │
+├─────────────────────────────────────────┤
+│  🟢 Connected - Gateway is online       │
+├─────────────────────────────────────────┤
+│  🔌 Extensions  💬 Channels  ⚙️ Settings│
+└─────────────────────────────────────────┘
 ```
 
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+---
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+## 🔧 Development
 
-```sh
-turbo dev --filter=web
+### Prerequisites
+
+- Node.js 18+
+- npm or pnpm
+- OpenClaw installed
+
+### Setup
+
+```bash
+# Clone repository
+git clone https://github.com/yourusername/superclaw.git
+cd superclaw/apps/web
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env.local
+# Edit .env.local with your credentials
+
+# Start development server
+npm run dev
 ```
 
-Without global `turbo`:
+### Environment Variables
 
-```sh
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
+```bash
+# Gateway
+NEXT_PUBLIC_GATEWAY_URL=ws://localhost:18789
+NEXT_PUBLIC_GATEWAY_TOKEN=your-token
+
+# WorkOS Auth
+WORKOS_API_KEY=your-api-key
+WORKOS_CLIENT_ID=your-client-id
+WORKOS_REDIRECT_URI=http://localhost:3000/callback
+WORKOS_COOKIE_PASSWORD=your-32-char-secret
 ```
 
-### Remote Caching
+---
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+## 🚢 Deployment
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+### Option 1: Vercel (Recommended)
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+```bash
+# Install Vercel CLI
+npm i -g vercel
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo login
+# Deploy
+cd superclaw/apps/web
+vercel
 ```
 
-Without global `turbo`, use your package manager:
+### Option 2: Docker
 
-```sh
-cd my-turborepo
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
+```bash
+# Build image
+docker build -t superclaw-web .
+
+# Run container
+docker run -p 3000:3000 superclaw-web
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+### Option 3: Self-Hosted
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+```bash
+# Build for production
+npm run build
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
-
-```sh
-turbo link
+# Start production server
+npm start
 ```
 
-Without global `turbo`:
+---
 
-```sh
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
+## 🤝 Contributing
+
+We welcome contributions! Here's how:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Priority Features
+
+- [ ] Extension marketplace UI
+- [ ] Channel configuration forms
+- [ ] Settings management interface
+- [ ] Real-time monitoring dashboard
+- [ ] Deployment automation
+- [ ] Mobile app
+
+---
+
+## 📝 Roadmap
+
+### Phase 1: Core Features (Current)
+- [x] Authentication system
+- [x] Gateway connection
+- [x] Basic dashboard
+- [ ] Extension marketplace
+- [ ] Channel configuration
+
+### Phase 2: Advanced Features
+- [ ] Settings management
+- [ ] Real-time monitoring
+- [ ] Log viewer
+- [ ] Deployment tools
+- [ ] API documentation
+
+### Phase 3: Production Ready
+- [ ] Managed hosting
+- [ ] One-click deployments
+- [ ] Mobile app
+- [ ] Team collaboration
+- [ ] Analytics dashboard
+
+---
+
+## 🐛 Troubleshooting
+
+### Gateway Won't Connect
+
+```bash
+# Check gateway is running
+ps aux | grep openclaw
+
+# Check port is open
+lsof -i :18789
+
+# View logs
+openclaw logs --follow
 ```
 
-## Useful Links
+### Authentication Issues
 
-Learn more about the power of Turborepo:
+```bash
+# Verify WorkOS credentials
+echo $WORKOS_API_KEY
+echo $WORKOS_CLIENT_ID
 
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+# Clear cookies
+# In browser console:
+document.cookie.split(";").forEach(c => {
+  document.cookie = c.trim().split("=")[0] + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/";
+});
+```
+
+**More help:** See `QUICK_START.md` troubleshooting section
+
+---
+
+## 📄 License
+
+MIT License - Same as OpenClaw
+
+---
+
+## 🙏 Acknowledgments
+
+- **OpenClaw** - The powerful AI assistant platform
+- **shadcn/ui** - Beautiful UI components
+- **WorkOS** - Authentication infrastructure
+- **Vercel** - Hosting and deployment
+
+---
+
+## 📞 Support
+
+- **Documentation:** See docs above
+- **Issues:** GitHub Issues
+- **Discussions:** GitHub Discussions
+- **Email:** support@superclaw.ai (coming soon)
+
+---
+
+## 🌟 Star Us!
+
+If you find SuperClaw useful, please star the repository!
+
+---
+
+**Built with ❤️ by the SuperClaw team**

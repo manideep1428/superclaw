@@ -1,0 +1,47 @@
+﻿---
+title: Profiles
+description: What profiles are for and how they fit into Superclae.
+---
+
+# Profiles
+
+Profiles are reusable setup bundles for Superclae.
+
+Instead of configuring every claw from scratch, you attach a profile that already defines the behavior and integrations you want.
+
+## What belongs in a profile
+
+A profile can describe:
+
+- the extension set a claw should use
+- provider choices or defaults
+- labels and runtime intent
+- environment-specific behavior, such as work or personal usage
+
+## Why profiles matter
+
+Profiles reduce duplication.
+
+For example, you might maintain:
+
+- a **Support** profile for customer-facing channels
+- a **Research** profile for search-heavy workflows
+- a **Personal** profile for private assistants
+
+Each one can later be assigned to one or more claws.
+
+## Relationship between profiles and claws
+
+Think of the profile as the blueprint and the claw as the running instance.
+
+- the **profile** stores the reusable setup
+- the **claw** runs with that setup attached
+
+This separation makes it easier to clone, switch, or reuse behavior across different runtime claws.
+
+## Current state
+
+If the profile page in the dashboard still looks lightweight, that is expected.
+
+The docs describe the intended model first so the UI can grow into it as backend support is added.
+

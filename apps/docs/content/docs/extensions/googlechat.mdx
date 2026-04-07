@@ -1,22 +1,23 @@
----
+﻿---
 title: Google Chat
 description: Connect to Google Chat using a Service Account
 ---
 
 # Google Chat
 
-Connect SuperClaw to your Google Workspace Chat instantly.
+Connect Superclae to your Google Workspace Chat instantly.
 
 ## Setup Instructions
 
 Google Chat uses Google Cloud's Service Accounts for server-to-server or bot applications. 
-Since SuperClaw runs its own backend, it uses a downloaded JSON key file to authenticate as the bot.
+Since Superclae runs its own backend, it uses a downloaded JSON key file to authenticate as the bot.
 
 1. Go to the [Google Cloud Console](https://console.cloud.google.com/).
 2. Create a new Google Cloud Project (or select an existing one).
 3. Search for the **Google Chat API** in APIs & Services, and enable it for your project.
-4. Next, go to **IAM & Admin** > **Service Accounts**. Create a new service account named `superclaw-bot`.
+4. Next, go to **IAM & Admin** > **Service Accounts**. Create a new service account named `Superclae-bot`.
 5. Once created, click on the **Keys** tab for the service account, click **Add Key**, and choose **JSON**. It will download a JSON file to your laptop.
-6. Open the downloaded JSON file in a text editor (like Notepad), select all text, and paste it securely into SuperClaw's Google Chat configuration modal.
+6. Open the downloaded JSON file in a text editor (like Notepad), select all text, and paste it securely into Superclae's Google Chat configuration modal.
 
-Once connected, you can configure your Chat API endpoint in the Google Cloud Console to point to your `https://your-domain.com/api/webhooks/googlechat` endpoint so Google sends the new messages to SuperClaw.
+Once connected, you can configure your Chat API endpoint in the Google Cloud Console to point to your `https://your-domain.com/api/webhooks/googlechat` endpoint so Google sends the new messages to Superclae.
+

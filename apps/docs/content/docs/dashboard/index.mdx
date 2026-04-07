@@ -1,0 +1,61 @@
+﻿---
+title: Dashboard Overview
+description: How the Superclae dashboard is organized and what each section does.
+---
+
+# Dashboard Overview
+
+The Superclae dashboard is the control surface for configuring providers, extensions, profiles, and runtime claws.
+
+Use the dashboard when you want to:
+
+- connect an LLM provider
+- configure extensions locally from the web UI
+- organize setups into profiles
+- monitor or control runtime claws
+
+## Main dashboard areas
+
+### Running Claws
+
+The dashboard home is where live claw cards appear.
+
+Each claw card is intended to show:
+
+- claw name
+- attached profile
+- runtime state
+- quick actions such as connect, turn off, settings, or delete
+
+Right now the page may still use placeholder data while live runtime wiring is being added.
+
+### Profiles
+
+Profiles are reusable configuration bundles.
+
+A profile is the place where you group:
+
+- extension choices
+- provider preferences
+- defaults that should travel together
+
+Profiles are useful when you want separate setups for support, research, personal, or internal operations.
+
+### LLM Providers
+
+The **LLM Providers** screen is for hosted model backends such as OpenAI, Anthropic, Google, OpenRouter, and Bedrock.
+
+Use it to save API credentials and local defaults first. The detailed provider setup steps live in [LLM Providers](/docs/providers).
+
+### Extensions
+
+The **Extensions** area lists the documented extension catalog already available in this repo.
+
+Each extension card links to its matching docs page, where the real setup steps are described.
+
+Use [Extensions Overview](/docs/extensions) to start from the docs side.
+
+## Current limitation
+
+Some dashboard flows are still frontend-first. In those cases, the UI can save local browser state before the backend runtime and gateway integration are fully connected.
+

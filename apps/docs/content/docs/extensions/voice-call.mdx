@@ -1,11 +1,11 @@
----
+﻿---
 title: Twilio Voice Call
 description: Turn your AI into a phone agent with Twilio.
 ---
 
 # Voice Call Extension
 
-This extension turns your SuperClaw AI into a fully autonomous phone agent. Make outbound notifications, carry on two-way spoken conversations, or handle inbound customer service calls. 
+This extension turns your Superclae AI into a fully autonomous phone agent. Make outbound notifications, carry on two-way spoken conversations, or handle inbound customer service calls. 
 
 Under the hood, this integrates with voice providers like **Twilio** to manage telephony and SIP orchestration.
 
@@ -25,11 +25,12 @@ To connect your AI, you'll need three things from Twilio: an Account SID, an Aut
 2. Purchase a number capable of "Voice".
 3. Write down this number in E.164 format (e.g. `+15551234567`). This will be the bot's caller ID.
 
-### 3. Connect to SuperClaw
-1. Open the SuperClaw Dashboard and select the **Voice Call** extension.
+### 3. Connect to Superclae
+1. Open the Superclae Dashboard and select the **Voice Call** extension.
 2. Under "Provider", leave it as `twillio`.
 3. Fill in the **Twilio Account SID** and **Twilio Auth Token**.
 4. Set the **From Phone Number** to the Twilio number you just purchased.
 5. Click Connect!
 
-Your AI can now be programmed via logic chains to call users, or you can route incoming calls from Twilio directly to your SuperClaw `api/voice/incoming` webhook route!
+Your AI can now be programmed via logic chains to call users, or you can route incoming calls from Twilio directly to your Superclae `api/voice/incoming` webhook route!
+

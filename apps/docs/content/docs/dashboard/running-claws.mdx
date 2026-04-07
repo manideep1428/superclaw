@@ -1,0 +1,53 @@
+﻿---
+title: Running Claws
+description: How the runtime claw cards are meant to work in the Superclae dashboard.
+---
+
+# Running Claws
+
+The **Running Claws** view is the runtime surface of Superclae.
+
+Its job is to show the claws that are active or available for connection.
+
+## What a claw card should show
+
+Each running claw card is designed to hold the operational fields you care about most:
+
+- claw name
+- profile name
+- status
+- primary action such as **Connect**
+- overflow actions from the three-dot menu
+
+## Card actions
+
+### Connect
+
+The **Connect** button is the main runtime action.
+
+Use it to attach to a claw session, open a live control path, or start the next runtime flow once backend support is connected.
+
+### Three-dot menu
+
+The overflow menu is intended for secondary claw actions:
+
+- **Settings**
+- **Turn off**
+- **Delete**
+
+Use settings for claw-specific configuration, turn off for stopping runtime activity, and delete for removing the claw record or instance once that behavior is implemented.
+
+## Live data plan
+
+If the runtime service is connected, this page should be driven by live claw data rather than static placeholders.
+
+A typical live claw object should eventually provide:
+
+- unique id
+- display name
+- profile id or profile name
+- connection state
+- last activity or health information
+
+Until then, placeholder cards are acceptable for layout work, but they should be treated as temporary UI scaffolding.
+

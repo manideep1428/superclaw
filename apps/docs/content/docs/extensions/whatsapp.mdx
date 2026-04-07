@@ -1,4 +1,4 @@
----
+﻿---
 title: WhatsApp
 description: Connect your personal WhatsApp account by scanning a QR code.
 ---
@@ -7,13 +7,13 @@ description: Connect your personal WhatsApp account by scanning a QR code.
 
 The WhatsApp extension allows your AI assistant to send and receive messages directly through your personal or business WhatsApp account. 
 
-Unlike the official Meta Cloud API which requires complex business verification, this extension uses a "WhatsApp Web" session approach — meaning you just scan a QR code to link it.
+Unlike the official Meta Cloud API which requires complex business verification, this extension uses a "WhatsApp Web" session approach â€” meaning you just scan a QR code to link it.
 
 ## Setup Guide
 
 There is no configuration required!
 
-1. Go to your SuperClaw dashboard and click **Connect** on the WhatsApp card.
+1. Go to your Superclae dashboard and click **Connect** on the WhatsApp card.
 2. The modal will load and display a QR code.
 3. Open **WhatsApp** on your phone.
 4. Go to **Settings** -> **Linked Devices** -> **Link a Device**.
@@ -22,6 +22,7 @@ There is no configuration required!
 
 ## How it works
 
-Behind the scenes, SuperClaw spins up an isolated, headless WhatsApp Web instance for your account. When messages arrive on your phone, they are instantly forwarded to your AI agent. When your AI replies, it sends the message through that same web session.
+Behind the scenes, Superclae spins up an isolated, headless WhatsApp Web instance for your account. When messages arrive on your phone, they are instantly forwarded to your AI agent. When your AI replies, it sends the message through that same web session.
 
-**Note:** If your SuperClaw server restarts, the connection will persist (the session tokens are saved securely), so you usually only have to scan the QR code once. If your phone disconnects the device from WhatsApp settings, you will need to scan it again.
+**Note:** If your Superclae server restarts, the connection will persist (the session tokens are saved securely), so you usually only have to scan the QR code once. If your phone disconnects the device from WhatsApp settings, you will need to scan it again.
+
